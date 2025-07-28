@@ -1,4 +1,4 @@
-UNDERSTAND THE DOCUMENT
+# UNDERSTAND THE DOCUMENT
 
 An advanced PDF document structure extraction tool powered by machine learning and natural language processing.
 
