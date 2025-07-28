@@ -1,10 +1,16 @@
-# Adobe Hackathon 25 - Document Intelligence System
+# Adobe Hackathon 2025
 
 [![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)](https://python.org)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 [![Hackathon](https://img.shields.io/badge/Event-Adobe%20Hackathon%202025-red.svg)](https://github.com/Bhoomi1921/Adobe-Hackathon-25)
 
 An intelligent document processing system that extracts, analyzes, and prioritizes content from PDF collections using advanced NLP techniques and semantic understanding. Built for the Adobe Hackathon 2025 challenge.
+
+## ✅Understand Your Document
+This module extracts structured outlines (Title, H1, H2, H3) from raw PDF documents. It generates JSON output with heading levels and page numbers, enabling machine-friendly document understanding. Built for CPU-only Docker environments with fast and accurate processing under 10 seconds.
+
+## ✅ Persona-Driven Document Intelligence
+This system intelligently identifies and ranks relevant document sections based on a user-defined persona and their task. It processes 3–10 PDFs, combining TF-IDF and semantic scoring to output relevance-tagged JSON. Fully containerized and optimized for offline, CPU-only execution.
 
 ## 🌟 Key Features
 
@@ -15,33 +21,6 @@ An intelligent document processing system that extracts, analyzes, and prioritiz
 - **🤖 Machine Learning Pipeline**: End-to-end ML workflow for document intelligence
 - **⚡ High Performance**: Optimized processing for large document collections
 - **🐳 Containerized Deployment**: Docker support for easy deployment and scaling
-
-## 🏗️ System Architecture
-
-```
-┌─────────────────┐    ┌──────────────────┐    ┌─────────────────┐
-│   PDF Input     │───▶│  Document Parser │───▶│ Content         │
-│   Collection    │    │  & Extractor     │    │ Classifier      │
-└─────────────────┘    └──────────────────┘    └─────────────────┘
-                                │                        │
-                                ▼                        ▼
-                       ┌──────────────────┐    ┌─────────────────┐
-                       │ Text Processing  │    │ Section         │
-                       │ & Cleaning       │    │ Categorization  │
-                       └──────────────────┘    └─────────────────┘
-                                │                        │
-                                ▼                        ▼
-                       ┌──────────────────┐    ┌─────────────────┐
-                       │ Semantic         │───▶│ Hierarchy       │
-                       │ Analyzer         │    │ Builder         │
-                       └──────────────────┘    └─────────────────┘
-                                                        │
-                                                        ▼
-                                               ┌─────────────────┐
-                                               │ Structured      │
-                                               │ Output          │
-                                               └─────────────────┘
-```
 
 ## 🛠️ Technology Stack
 
@@ -132,32 +111,6 @@ cd adobe1b
 python run.py --documents sample_data/ --output output/
 ```
 
-## 📊 Core Components
-
-### 1. Document Parser (`document_parser.py`)
-- Extracts text content from PDF files
-- Preserves document structure and formatting
-- Handles various PDF types and encodings
-- Maintains page-level organization
-
-### 2. Content Classifier (`content_classifier.py`)
-- Categorizes document sections by content type
-- Uses machine learning for intelligent classification
-- Supports multiple document domains
-- Provides confidence scores for classifications
-
-### 3. Semantic Analyzer (`semantic_analyzer.py`)
-- Performs deep semantic understanding of content
-- Uses transformer models for contextual analysis
-- Identifies key concepts and relationships
-- Enables similarity-based document matching
-
-### 4. Hierarchy Builder (`hierarchy_builder.py`)
-- Constructs logical document hierarchies
-- Identifies parent-child relationships between sections
-- Creates structured document maps
-- Enables navigation and content organization
-
 ## 🧪 Testing & Validation
 
 ### Run System Tests
@@ -168,12 +121,6 @@ python test_system.py
 python test_with_generated_data.py
 python test_my_documents.py
 ```
-
-### Performance Benchmarks
-- **Processing Speed**: 3-10 documents in under 60 seconds
-- **Memory Usage**: ~2GB typical, 4GB maximum
-- **Accuracy**: 90%+ content classification accuracy
-- **Scalability**: Handles collections of 100+ documents
 
 ## 🐳 Docker Deployment
 
@@ -196,37 +143,6 @@ docker run -d \
   -v /host/documents:/app/input \
   -v /host/results:/app/output \
   adobe-hackathon
-```
-
-## 📈 Performance Optimization
-
-### Resource Management
-- **CPU Optimization**: Multi-threaded processing for large document sets
-- **Memory Efficiency**: Streaming processing to handle large files
-- **Disk Usage**: Temporary file cleanup and efficient storage
-
-### Scaling Considerations
-- **Horizontal Scaling**: Stateless design for distributed processing
-- **Load Balancing**: Queue-based document processing
-- **Monitoring**: Built-in performance metrics and logging
-
-## 🔧 Configuration
-
-### Environment Variables
-```bash
-export ADOBE_MODEL_PATH="/path/to/models"
-export ADOBE_OUTPUT_FORMAT="json"  # or "csv"
-export ADOBE_DEBUG_MODE="true"
-export ADOBE_MAX_WORKERS="4"
-```
-
-### Custom Configuration
-Modify processing parameters in `config.py`:
-```python
-# Processing settings
-MAX_DOCUMENT_SIZE = 50 * 1024 * 1024  # 50MB
-CLASSIFICATION_THRESHOLD = 0.8
-SEMANTIC_SIMILARITY_THRESHOLD = 0.7
 ```
 
 ## 📊 Output Format
@@ -342,10 +258,10 @@ pytest tests/
 
 ## 🏆 Hackathon Team
 
-- **Team Name**: [Trio]
-- **Team Members**: [Bhoomi Gupta, Bhagyashri Nigdikar]
+- **Team Name**: Trio
+- **Team Members**: Bhoomi Gupta, Bhagyashri Nigdikar
 - **Challenge**: Adobe Hackathon 2025
-- **Category**: Document Intelligence & Processing
+- **Category**: PDF Document Intelligence & Processing
 
 ## 🙏 Acknowledgments
 
