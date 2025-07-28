@@ -1,4 +1,4 @@
-# UNDERSTAND THE DOCUMENT
+# Adobe1a - UNDERSTAND THE DOCUMENT
 
 An advanced PDF document structure extraction tool powered by machine learning and natural language processing.
 
@@ -89,7 +89,7 @@ docker run --rm \
   --network none \
   adobe-doc-processor:round1a
 ```
-###Run Code
+### Run Code
 ```bash
 python content_classifier.py document_parser.py hierarchy_builder.py semantic_analyzer.py
 #run main file
